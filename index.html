@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Sorting Visualizer</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <h1>Sorting Visualizer</h1>
+      <div class="header-buttons">
+        <button id="startSort" class="start-btn">Start Sorting</button>
+        <button id="resetSort" class="reset-btn" disabled>Reset</button>
+        <button id="newArray" class="new-array-btn">New Array</button>
+      </div>
+      <div class="info-icon">?</div>
+    </div>
+    <div class="algorithm-buttons">
+      <button class="active">Bubble Sort</button>
+      <button>Selection Sort</button>
+      <button>Insertion Sort</button>
+      <button>Merge Sort</button>
+      <button>Quick Sort</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="visualization-container">
+      <div id="array-container"></div>
+      <div class="metrics">
+        <div class="metric">
+          <span>Comparisons</span>
+          <span id="comparisons">0</span>
+        </div>
+        <div class="metric">
+          <span>Swaps</span>
+          <span id="swaps">0</span>
+        </div>
+        <div class="metric">
+          <span>Time Elapsed</span>
+          <span id="timeElapsed">0.0s</span>
+        </div>
+        <div class="metric">
+          <span>Steps</span>
+          <span id="steps">0</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="slider-container">
+        <label>Array Size</label>
+        <div class="slider-with-values">
+          <span>10</span>
+          <input type="range" id="arraySize" min="10" max="100" value="50">
+          <span>100</span>
+        </div>
+      </div>
+      <div class="slider-container">
+        <label>Animation Speed</label>
+        <div class="slider-with-values">
+          <span>Slow</span>
+          <input type="range" id="speed" min="1" max="100" value="50">
+          <span>Fast</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="algorithm-info">
+      <div class="color-legend">
+        <h3>Color Legend</h3>
+        <div class="legend-items">
+          <div class="legend-item">
+            <div class="color-box current"></div>
+            <span>Current</span>
+          </div>
+          <div class="legend-item">
+            <div class="color-box comparing"></div>
+            <span>Comparing</span>
+          </div>
+          <div class="legend-item">
+            <div class="color-box swapping"></div>
+            <span>Swapping</span>
+          </div>
+          <div class="legend-item">
+            <div class="color-box sorted"></div>
+            <span>Sorted</span>
+          </div>
+        </div>
+      </div>
+      <div class="algorithm-details">
+        <h3>Algorithm Details</h3>
+        <div id="algorithmDescription"></div>
+        <div class="complexity-info">
+          <h4>Time Complexity</h4>
+          <div class="complexity-grid">
+            <div>Best Case</div>
+            <div>Average Case</div>
+            <div>Worst Case</div>
+            <div>Ω(n)</div>
+            <div>Θ(n²)</div>
+            <div>O(n²)</div>
+          </div>
+          <h4>Space Complexity</h4>
+          <p>O(1)</p>
+          <p>Only requires a single additional memory space for swapping</p>
+        </div>
+        <div class="pseudocode">
+          <h4>Pseudocode</h4>
+          <div class="language-selector">
+            <button class="lang-btn active" data-lang="python">Python</button>
+            <button class="lang-btn" data-lang="cpp">C++</button>
+            <button class="lang-btn" data-lang="java">Java</button>
+          </div>
+          <pre id="algorithmPseudocode"></pre>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <div class="modal" id="infoModal">
+    <div class="modal-content">
+      <button class="close-modal">&times;</button>
+      <h3>About Sorting Visualizer</h3>
+      <p>This visualization tool helps you understand how different sorting algorithms work by showing their step-by-step execution.</p>
+      <br>
+      <h4>How to Use:</h4>
+      <ul>
+        <li>Click "New Array" to generate a random array</li>
+        <li>Choose a sorting algorithm from the options above</li>
+        <li>Adjust the array size and animation speed using the sliders</li>
+        <li>Click "Start Sorting" to see the algorithm in action</li>
+        <li>Watch the metrics to understand algorithm performance</li>
+        <li>Study the pseudocode in your preferred programming language</li>
+      </ul>
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
