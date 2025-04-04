@@ -172,6 +172,7 @@
     margin: 2rem 0;
     display: flex;
     gap: 2rem;
+    flex-wrap: wrap;
   }
   
   .slider-container {
