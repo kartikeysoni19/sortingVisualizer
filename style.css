@@ -56,7 +56,6 @@
   .header-buttons {
     display: flex;
     gap: 1rem;
-    flex-wrap: wrap;
   }
   
   .new-array-btn, .start-btn, .reset-btn {
@@ -96,6 +95,7 @@
   .algorithm-buttons {
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
   }
   
   .algorithm-buttons button {
