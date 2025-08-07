@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -96,17 +95,15 @@
         <div id="algorithmDescription"></div>
         <div class="complexity-info">
           <h4>Time Complexity</h4>
-          <div class="complexity-grid">
+          <div class="complexity-grid" id="timeComplexityGrid">
             <div>Best Case</div>
             <div>Average Case</div>
             <div>Worst Case</div>
-            <div>Ω(n)</div>
-            <div>Θ(n²)</div>
-            <div>O(n²)</div>
+            <!-- Complexity values will be dynamically inserted here -->
           </div>
           <h4>Space Complexity</h4>
-          <p>O(1)</p>
-          <p>Only requires a single additional memory space for swapping</p>
+          <p id="spaceComplexity"></p>
+  <p id="spaceComplexityInfo"></p>
         </div>
         <div class="pseudocode">
           <h4>Pseudocode</h4>
