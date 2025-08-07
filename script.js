@@ -55,9 +55,9 @@ async function startSorting() {
   }
 }
 
-// Reset sorting handler
+
 function resetSorting() {
-  shouldStop = true; 
+  shouldStop = true;  
   isRunning = false;
   disableControls(false);
   generateArray();
@@ -471,6 +471,8 @@ function updateComplexityDisplay() {
   spaceCompInfo.textContent = algorithmInfo[algorithm].spaceComplexityInfo || '';
 }
 
+
+
 // Array generation and display 
 
 function generateArray() {
@@ -520,6 +522,7 @@ function updateMetrics(comparisons, swaps) {
 }
 
 async function sleep(ms) {
+  // Map animationSpeed 1-100 to delay multiplier (faster speed = shorter delay)
   return new Promise(resolve => setTimeout(resolve, ms * (100 - animationSpeed) / 50));
 }
 
@@ -563,12 +566,12 @@ function updatePseudocode() {
   document.getElementById('algorithmPseudocode').textContent = algorithmInfo[algorithm].pseudocode[currentLanguage];
 }
 
-
+ 
 function toggleModal() {
   document.getElementById('infoModal').classList.toggle('active');
 }
 
-// Initialize on load
+ 
 window.onload = function() {
   document.querySelector('.info-icon').addEventListener('click', toggleModal);
   document.querySelector('.close-modal').addEventListener('click', toggleModal);
@@ -582,7 +585,7 @@ window.onload = function() {
 
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.addEventListener('click', function() {
-      if (isRunning) return; 
+      if (isRunning) return;  
       document.querySelector('.lang-btn.active').classList.remove('active');
       this.classList.add('active');
       currentLanguage = this.dataset.lang;
